@@ -12,6 +12,7 @@ config({
 })
 
 const app=express();
+const url="http://localhost:3000";
 
 // Using Middlewares
 app.use(cookieParser());
@@ -28,5 +29,11 @@ app.use("/api/v1",payment);
 app.use("/api/v1", other);
 
 export default app;
+
+app.get("/", (req, res) =>
+  res.send(
+    `<h1>Site is Working. click <a href=${url}>here</a> to visit frontend.</h1>`
+  )
+);
 
 app.use(ErrorMiddleware);
