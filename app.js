@@ -23,6 +23,14 @@ app.use(
   })
 );
 
+app.use(
+  cors({
+    origin: url,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
+
 app.use("/api/v1",course);
 app.use("/api/v1",user);
 app.use("/api/v1",payment);
