@@ -16,6 +16,7 @@ router.route("/addtoplaylist").post(isAuthenticated, addToPlaylist);
 router.route("/removefromplaylist").delete(isAuthenticated, removeFromPlaylist);
 router.route("/uploadprofilepicture").put(isAuthenticated,singleUpload,updateprofilepicture);
 router.route("/admin/users").get(isAuthenticated,isAuthorizeAdmin,getAllUsers);
+
 router.route("/admin/user/:id").put(isAuthenticated,isAuthorizeAdmin,updateUserRole)
 .delete(isAuthenticated,isAuthorizeAdmin,deleteUser);
 
